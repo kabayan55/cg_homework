@@ -1,0 +1,99 @@
+import com.jogamp.opengl.util.PMVMatrix;
+
+public class CameraController implements MouseMotionListener, MouseListener, 
+                                         KeyListener{
+  volatile PMVMatrix mat;
+  CameraController(){
+    mat = new PMVMatrix();
+    //モデルビュー行列　GL_MODELVIEW
+    mat.glMatrixMode(PMVMatrix.GL_MODELVIEW);
+  }
+
+  //synchronizedはインスタンスへのアクセスをブロックする
+  synchronized FloatBuffer getFloatBuffer(){
+    return mat.glGetMvMatrixf();
+  }
+
+  public void keyPressed(KeyEvent e){
+    int keycode = e.getKeyCode();
+    System.out.print(keycode);
+    switch(keycode){
+    case java.awt.event.KeyEvent.VK_LEFT:
+      System.out.print("a");
+      break;
+    
+    
+      /*System.out.println("pressed:"+e.getX()+" "+e.getY());
+        if(java.awt.event.KeyEvent.VK_LEFT == keycode){
+	  System.out.print("視点を左に");
+	  //左から見たいんだけど動作してるかわからない〜Kabayan.javaじゃないと表示されない
+        gluLookAt(-80.0f, 0.0f, 25.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
+
+      }
+      if(java.awt.event.KeyEvent.VK_RIGHT == keycode){
+	  //ifでもelse ifでも文字列すら表示されないぞ
+	  System.out.print("視点を右に");
+	  gluLookAt(80.0f, 20.0f, 20.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
+
+      }
+      if(java.awt.event.KeyEvent.VK_UP == keycode){
+	  System.out.print("視点を上に");
+	  gluLookAt(6.5f, 70.0f, 6.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
+
+	  }
+
+    */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    }
+  }
+
+  public void keyReleased(KeyEvent e){
+  }
+
+  public void keyTyped(KeyEvent e){
+  }
+
+  public void mouseDragged(MouseEvent e){
+    System.out.println("dragged:"+e.getX()+" "+e.getY());
+  }
+    
+    
+
+  public void mouseMoved(MouseEvent e){
+    System.out.println("moved:"+e.getX()+" "+e.getY());
+  }
+
+  public void mouseClicked(MouseEvent e){
+  }
+  public void mouseEntered(MouseEvent e){
+  }
+  public void mouseExited(MouseEvent e){
+  }
+  public void mousePressed(MouseEvent e){
+  
+  }
+  public void mouseReleased(MouseEvent e){
+  }
+  
+
+    //void 	gluLookAt(float eyex, float eyey, float eyez, float centerx, float centery, float centerz, float upx, float upy, float upz)
+
+
+
+
+
+
+}
